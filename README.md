@@ -1,9 +1,10 @@
 <h1><em>Fract-ol</em><strong><em> (grade : ??)</em></strong></h1>
 <div align="center"><br /><img src="https://user-images.githubusercontent.com/76601369/110706242-77158d00-81ef-11eb-8085-5da6f0988553.jpg" alt="https://user-images.githubusercontent.com/76601369/110706242-77158d00-81ef-11eb-8085-5da6f0988553.jpg" width="400" height="200" /></div>
 <p><strong>This project has the goal of creating a program with a graphical library (minilibx), by creating, handling and refreshing the image.</strong></p>
-<p><strong>Important: *This program is built to run on Linux and most of the utilities in MacOs will fail since the int sent by each key has a different value.*</p><p>To run the program you first need to install X11, XShm extension and libbsd-dev package, by typing in the terminal:</strong></p>
+<p><strong>Important: <p>To run the program you first need to install X11, XShm extension and libbsd-dev package, by typing in the terminal:</strong></p>
 <p><strong>sudo apt-get install gcc make xorg libxext-dev libbsd-dev</strong></p>
 <p><strong>After that, enter the folder mlx_linux and run ./configure</strong></p>
+<p>*This program is built to run on Linux and most of the utilities in MacOs will fail since the int sent by each key has a different value.*</p>
 <p>In the mandatory part, the task given is to have a program that would be able to:</p>
 <ul style="list-style-type: square;">
 <li>Offer the option of the chosing both <strong>Mandelbot</strong> and <strong>Julia sets</strong>.</li>
