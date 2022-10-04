@@ -26,5 +26,5 @@
 <p>I could go into details what's the mathematics behind each set but nowadays you can find it almost everywhere. If you have literally zero insights, I would however recomend you the numberphile videos (since i really enjoy them and probably you will understand at least the concepts),</p>
 <p>There is of course some points in the job that could be better. The first great feature that i can think of is a scalable with zoom axis, to really be able to get a more mathematical aproach on this program.</p>
 <p>The second thing that i can think of is to really be able to zoom where the mouse stands, that would have been great however i couldn't understand how to do so on minilibx library.</p>
-<p>As my grade i got 125, getting full grade on both mandatory and bonus parts.</p>
+<p>As my grade i got ??, getting full grade on the mandatory  part and a bit of the bonus part.</p>
 <div align="center"><br /><img src="https://user-images.githubusercontent.com/99777188/193395212-77b31dcb-76cb-478f-8024-16e6b4960e28.png" width="800" height="230" /></div>
