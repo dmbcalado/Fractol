@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:51:52 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/05/16 15:42:45 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/04 00:47:24 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "mlx.h"
+# include "../mlx_linux/mlx.h"
 # include "math.h"
 # include "pthread.h"
 
@@ -26,14 +26,16 @@ typedef struct s_vars
 {
 	int		x;
 	int		y;
-	double	real;
-	double	imag;
-	double	offset_x;
-	double	offset_y;
 	double	c_x;
 	double	c_y;
 	double	j_c_x;
 	double	j_c_y;
+	double	real;
+	double	imag;
+	double	offset_x;
+	double	offset_y;
+	double	real_mouse;
+	double	img_mouse;
 }			t_complex;
 
 //----- MLX INFO --------
@@ -59,11 +61,10 @@ typedef struct windowsxp
 	int	center_y;
 }				t_w_data;
 
-typedef struct z_data{
+typedef struct z_data
+{
 	double	v_zoom;
 	double	h_zoom;
-	double	v_unzoom;
-	double	h_unzoom;
 }				t_zoom;
 
 // ------ KEY INFO --------
@@ -83,6 +84,25 @@ typedef struct s_key
 	int		np_minus;
 }			t_keys;
 
+typedef struct s_kint
+{
+	int		K_W;
+	int		K_A;
+	int		K_S;
+	int		K_D;
+	int		K_ESC;
+	int		K_AR_L;
+	int		K_AR_U;
+	int		K_AR_R;
+	int		K_AR_D;
+	int		K_NP_MIN;
+	int		K_NP_PLU;
+	int		M_SCR_U;
+	int		M_SCR_D;
+	int		M_CLICK;
+	int		M_RCLICK;
+}			t_kint;
+
 //-------- MOTHER STRUCT-------
 
 typedef struct s_move
@@ -93,6 +113,7 @@ typedef struct s_move
 	t_complex	nbr;
 	t_complex	initial;
 	t_zoom		zoom;
+	t_kint		kint;
 	int			wich_fractal;
 	int			times_zoomed;
 	int			max_it;
@@ -102,6 +123,7 @@ typedef struct s_move
 //%%%%%%%%%%%%%%%%%%%%%		FUNCTIONS	%%%%%%%%%%%%%%%%%%%%%%%
 //------------- INITIALIZING FUNCTIONS ---------------
 t_keys		starting_keys(void);
+t_kint		starting_kint(void);
 t_zoom		starting_zoom(void);
 t_complex	starting_numbers(void);
 t_w_data	starting_window(int lenght, int height);
@@ -119,6 +141,7 @@ void		refreshing_image(t_hooks *class);
 void		safety_one(void);
 void		safety_two(void);
 void		manual(void);
+void		free_rest(t_hooks *class);
 
 //------------- AUX FUNCTIONS
 int			compare(const char *s1, const char *s2);
@@ -145,6 +168,8 @@ void		key_left(t_hooks *class);
 void		key_right(t_hooks *class);
 
 //------ MOUSE
+void		new_mouse_posit(t_hooks *class, int x, int y);
+void		calc_mouse_posit(t_hooks *class, int x, int y);
 int			mouse_press(int key, int x, int y, t_hooks *class);
 int			mouse_press_mandelbrot(int key, t_hooks *class);
 int			mouse_press_julia(int key, t_hooks *class);
@@ -179,20 +204,6 @@ int			recursive_julia(double real, double imag, t_hooks *class);
 void		fill_julia(t_hooks *class);
 #endif
 
-//a norminette atrofia com eu escolher as teclas
-#define K_ESC 53
-#define K_W 13
-#define K_A 0
-#define K_S 1
-#define K_D 2
-#define K_NP_MIN 78
-#define K_NP_PLU 69
-#define K_AR_L 123
-#define K_AR_R 124
-#define K_AR_U 126
-#define K_AR_D 125
+
 
 // MOUSE
-
-#define M_SCR_U 4
-#define M_SCR_D 5
