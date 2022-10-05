@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:39:27 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/03 21:27:56 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:15:32 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	zoom_mandelbrot(t_hooks *c)
 	c->zoom.h_zoom += 100.0;
 	c->zoom.v_zoom += 100.0;
 	c->times_zoomed++;
+	refreshing_image(c);
 	fill_mandelbrot(c);
 }
 
@@ -29,6 +30,7 @@ void	unzoom_mandelbrot(t_hooks *c)
 	if (c->zoom.v_zoom >= 100.0)
 		c->zoom.v_zoom -= 100.0;
 	c->times_zoomed--;
+	refreshing_image(c);
 	fill_mandelbrot(c);
 }
 
@@ -38,6 +40,7 @@ void	zoom_julia(t_hooks *c)
 	c->zoom.h_zoom += 100.0;
 	c->zoom.v_zoom += 100.0;
 	c->times_zoomed++;
+	refreshing_image(c);
 	fill_julia(c);
 }
 
@@ -47,5 +50,6 @@ void	unzoom_julia(t_hooks *c)
 	c->zoom.h_zoom -= 100.0;
 	c->zoom.v_zoom -= 100.0;
 	c->times_zoomed--;
+	refreshing_image(c);
 	fill_julia(c);
 }

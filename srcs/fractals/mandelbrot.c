@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 03:36:01 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/03 16:55:16 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:31:14 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	recursive_mandelbrot(double real, double imag, t_hooks *class)
 
 void	fill_mandelbrot(t_hooks *class)
 {
-	int		flag;
+	int	flag;
 
 	while (++class->nbr.y < class->win.height)
 	{
@@ -40,10 +40,10 @@ void	fill_mandelbrot(t_hooks *class)
 				class->it = 0;
 				flag = recursive_mandelbrot(class->nbr.real, class->nbr.imag, \
 				class);
-				best_pallete(flag, class);
+				palletes(flag, class);
 			}
 			else
-				best_pallete(-1, class);
+				palletes(-1, class);
 		}
 		class->nbr.x = -1;
 	}

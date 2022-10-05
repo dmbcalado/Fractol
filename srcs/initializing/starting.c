@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 02:20:43 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:26:27 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:16:56 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ t_keys	starting_keys(void)
 	keys.lol_key = 0;
 	keys.np_minus = 0;
 	keys.np_plus = 0;
+	keys.key_n = 0;
 	return (keys);
 }
 
@@ -92,5 +93,6 @@ t_kint	starting_kint(void)
 	new.M_SCR_D = 5;
 	new.M_CLICK = 1;
 	new.M_RCLICK = 3;
+	new.K_N = 110;
 	return (new);
 }

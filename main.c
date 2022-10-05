@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:47:33 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:46:56 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:07:17 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,7 @@ int	main(int argc, char **argv)
 		mlx_hook(class.img.win, 4, 1L << 2, &mouse_press, &class.img);
 		mlx_hook(class.img.win, 5, 1L << 6, &mouse_release, &class.img);
 		mlx_loop(class.img.mlx);
-		free_rest(&class);
 	}
 	else
 		safety_one();
-}
-
-void	free_rest(t_hooks *class)
-{
-	free(class->img.mlx);
-	free(class->img.win);
-	free(class->img.img);
-	free(class->img.addr);
 }

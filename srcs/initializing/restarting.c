@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:40:35 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:41:56 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:38:02 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,6 @@ void	starting_class(t_hooks *class)
 	class->times_zoomed = 1;
 	class->max_it = 25;
 	class->it = 0;
-}
-
-t_mlx_data	starting_new_image(t_w_data win)
-{
-	t_mlx_data	img;
-
-	img.mlx = NULL;
-	img.img = mlx_new_image(img.mlx, win.lenght, win.height);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, \
-	&img.line_length, &img.endian);
-	return (img);
 }
 
 void	choosing_fractal(char *str, t_hooks *class)

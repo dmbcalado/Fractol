@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:51:52 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:47:24 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:31:58 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct s_key
 	int		key_s;
 	int		key_a;
 	int		key_d;
+	int		key_n;
 	int		key_scr_u;
 	int		key_scr_d;
 	int		key_esc;
@@ -101,6 +102,7 @@ typedef struct s_kint
 	int		M_SCR_D;
 	int		M_CLICK;
 	int		M_RCLICK;
+	int		K_N;
 }			t_kint;
 
 //-------- MOTHER STRUCT-------
@@ -152,8 +154,10 @@ void		choosing_fractal(char *str, t_hooks *class);
 void		getting_c_for_julia(char *c_x, char *c_y, t_hooks *class);
 
 //------------- FILLING AND COLOURING PIXELS
-void		colour_pixel(double flag, t_hooks *class);
-void		best_pallete(double flag, t_hooks *class);
+void		palletes(int flag, t_hooks *class);
+void		colour_pixel(int flag, t_hooks *class);
+void		day_pallete(int flag, t_hooks *class);
+void		night_pallete(int flag, t_hooks *class);
 void		my_mlx_pixel_put(t_mlx_data *data, int x, int y, int color);
 
 //------------ HOOK FUNCTIONS

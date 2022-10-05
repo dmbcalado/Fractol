@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:44:18 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/05/15 20:03:27 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:40:22 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ void	my_mlx_pixel_put(t_mlx_data *data, int x, int y, int color)
 
 void	refreshing_image(t_hooks *class)
 {
+	mlx_destroy_image(class->img.mlx, class->img.img);
 	class->img.img = mlx_new_image(class->img.mlx, class->win.lenght, \
 	class->win.height);
 	class->img.addr = mlx_get_data_addr(class->img.img, \
 	&class->img.bits_per_pixel, &class->img.line_length, &class->img.endian);
-}
-
-void	kill_image(t_mlx_data img)
-{
-	mlx_hook(img.win, 17, 0, close, &img);
 }

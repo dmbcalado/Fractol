@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 03:36:01 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:30:43 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:59:29 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	fill_julia(t_hooks *class)
 			{
 				class->it = 0;
 				flag = recursive_julia(class->nbr.real, class->nbr.imag, class);
-				best_pallete(flag, class);
+				palletes(flag, class);
 			}
 			else
-				best_pallete(-1, class);
+				palletes(-1, class);
 		}
 		class->nbr.x = -1;
 	}

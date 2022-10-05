@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 19:07:29 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/04 00:33:30 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:14:50 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	mouse_press_julia(int key, t_hooks *class)
 	{
 		mlx_mouse_get_pos(class->img.mlx, class->img.win, &x, &y);
 		new_mouse_posit(class, x, y);
-		mlx_destroy_image(class->img.mlx, class->img.img);
 		refreshing_image(class);
 		fill_julia(class);
 	}
