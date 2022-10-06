@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:46:54 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 18:45:40 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:36:13 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	calc_mouse_posit(t_hooks *class, int x, int y)
 	- 175.0 + class->nbr.offset_x) / (350.0 + (double)class->zoom.h_zoom);
 	class->nbr.img_mouse = ((double)class->win.height / 2.0 - (double)y + \
 	class->nbr.offset_y) / (350.0 + (double)class->zoom.v_zoom);
-	printf("x: %f	y: %f\n", class->nbr.real_mouse, class->nbr.img_mouse);
+	ft_printf("x: %f	y: %f\n", class->nbr.real_mouse, class->nbr.img_mouse);
 }
 
 void	new_mouse_posit(t_hooks *class, int x, int y)

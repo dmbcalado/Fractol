@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:47:33 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/05 20:07:17 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:29:09 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int argc, char **argv)
 			fill_mandelbrot(&class);
 		else if (class.wich_fractal == 2)
 			go_for_julia(argv, argc, &class);
+		else if (class.wich_fractal == 4)
+			fill_hourglass(&class);
 		else if (class.wich_fractal == 3)
 			manual();
 		mlx_loop_hook(class.img.mlx, &main_loop, &class);

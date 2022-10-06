@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 19:07:29 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 19:02:07 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:35:51 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	mouse_press(int key, int x, int y, t_hooks *class)
 	(void)y;
 	if (class->wich_fractal == 1)
 		mouse_press_mandelbrot(key, class);
-	if (class->wich_fractal == 2)
+	else if (class->wich_fractal == 2)
 		mouse_press_julia(key, class);
+	else if (class->wich_fractal == 4)
+		mouse_press_hourglass(key, class);
 	return (0);
 }
 
@@ -56,6 +58,15 @@ int	mouse_press_julia(int key, t_hooks *class)
 		refreshing_image(class);
 		fill_julia(class);
 	}
+	return (0);
+}
+
+int	mouse_press_hourglass(int key, t_hooks *class)
+{
+	if (key == class->kint.m_scr_d)
+		zoom_hourglass(class);
+	else if (key == class->kint.m_scr_u)
+		unzoom_hourglass(class);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:40:35 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 19:28:41 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:31:56 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ void	choosing_fractal(char *str, t_hooks *class)
 		class->wich_fractal = 2;
 	else if (compare(str, "manual") == -2)
 		class->wich_fractal = 3;
+	else if (compare(str, "hourglass") == -2)
+		class->wich_fractal = 4;
 	else
 	{
-		printf("not a legal input. turning off.\n");
+		ft_printf("not a legal input. turning off.\n");
 		exit(0);
 	}
 }

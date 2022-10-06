@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   hourglass.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 03:36:01 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 20:42:25 by dmendonc         ###   ########.fr       */
+/*   Created: 2022/10/06 19:56:39 by dmendonc          #+#    #+#             */
+/*   Updated: 2022/10/06 20:23:20 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractal.h"
 
-int	recursive_julia(double real, double imag, t_hooks *class)
+int	hourglass(double real, double imag, t_hooks *class)
 {
 	class->initial.real = real;
 	class->initial.imag = imag;
-	real = pow(real, 2.0) - pow(imag, 2.0) + class->nbr.j_c_x;
-	imag = 2.0 * class->initial.real * imag + class->nbr.j_c_y;
+	real = pow(real, 2) - pow(imag, 2) - 1;
+	imag = 3.0 * class->initial.real * imag;
 	if (calculate_radius(real, imag) >= 4.0)
 		return (class->it);
 	class->it++;
 	if (class->it == class->max_it)
 		return (-2);
-	return (recursive_julia(real, imag, class));
+	return (hourglass(real, imag, class));
 }
 
-void	fill_julia(t_hooks *class)
+void	fill_hourglass(t_hooks *class)
 {
 	int		flag;
 
@@ -38,7 +38,7 @@ void	fill_julia(t_hooks *class)
 			if (calculate_radius(class->nbr.real, class->nbr.imag) <= 4.0)
 			{
 				class->it = 0;
-				flag = recursive_julia(class->nbr.real, class->nbr.imag, class);
+				flag = hourglass(class->nbr.real, class->nbr.imag, class);
 				palletes(flag, class);
 			}
 			else

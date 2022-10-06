@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:51:52 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 19:28:41 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:36:37 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "../mlx_linux/mlx.h"
+# include "../ft_printf/ft_printf.h"
 # include "math.h"
 # include "pthread.h"
 
@@ -133,7 +134,6 @@ void		starting_class(t_hooks *class);
 t_mlx_data	starting_image(t_w_data win);
 void		refreshing_image(t_hooks *class);
 
-
 //------------- AUX FUNCTIONS
 int			compare(const char *s1, const char *s2);
 double		char_to_double(const char *str);
@@ -165,15 +165,18 @@ void		n_key_press(t_hooks *class);
 void		new_mouse_posit(t_hooks *class, int x, int y);
 void		calc_mouse_posit(t_hooks *class, int x, int y);
 int			mouse_press(int key, int x, int y, t_hooks *class);
-int			mouse_press_mandelbrot(int key, t_hooks *class);
 int			mouse_press_julia(int key, t_hooks *class);
+int			mouse_press_hourglass(int key, t_hooks *class);
+int			mouse_press_mandelbrot(int key, t_hooks *class);
 int			mouse_release(int key, t_hooks *class);
 
 //----------- ZOOM FUNCTIONS
-void		zoom_mandelbrot(t_hooks *class);
-void		unzoom_mandelbrot(t_hooks *class);
 void		zoom_julia(t_hooks *class);
 void		unzoom_julia(t_hooks *class);
+void		zoom_hourglass(t_hooks *class);
+void		unzoom_hourglass(t_hooks *class);
+void		zoom_mandelbrot(t_hooks *class);
+void		unzoom_mandelbrot(t_hooks *class);
 
 //----------- RESOLUTION FUNCTIONS
 void		increase_resolution(t_hooks *class);
@@ -182,17 +185,21 @@ void		decrease_resolution(t_hooks *class);
 //----------- COORDINATES FUNCTIONS
 void		set_coordinates_mandelbrot(int x, int y, t_hooks *class);
 void		set_coordinates_julia(int x, int y, t_hooks *class);
+double		calculate_radius(double x, double y);
 
 //----------- MANDELBROT
 
 void		fill_mandelbrot(t_hooks *class);
 int			recursive_mandelbrot(double real, double imag, t_hooks *class);
-double		calculate_radius(double x, double y);
 
-//----------- MANDELBROT
+//----------- JULIA
 int			recursive_julia(double real, double imag, t_hooks *class);
 void		fill_julia(t_hooks *class);
-#endif
+
+//----------- TRIPLE JULIA
+
+int			hourglass(double real, double imag, t_hooks *class);
+void		fill_hourglass(t_hooks *class);
 
 
 //------------- SAFETIES & FREES
@@ -200,3 +207,5 @@ void		safety_one(void);
 void		safety_two(void);
 void		manual(void);
 void		free_rest(t_hooks *class);
+
+#endif

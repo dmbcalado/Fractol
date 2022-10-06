@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 19:40:27 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/05 20:14:31 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:28:03 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	key_up(t_hooks *class)
 		fill_mandelbrot(class);
 	else if (class->wich_fractal == 2)
 		fill_julia(class);
+	else if (class->wich_fractal == 4)
+		fill_hourglass(class);
 }
 
 void	key_down(t_hooks *class)
@@ -30,6 +32,8 @@ void	key_down(t_hooks *class)
 		fill_mandelbrot(class);
 	else if (class->wich_fractal == 2)
 		fill_julia(class);
+	else if (class->wich_fractal == 4)
+		fill_hourglass(class);
 }
 
 void	key_left(t_hooks *class)
@@ -40,6 +44,8 @@ void	key_left(t_hooks *class)
 		fill_mandelbrot(class);
 	else if (class->wich_fractal == 2)
 		fill_julia(class);
+	else if (class->wich_fractal == 4)
+		fill_hourglass(class);
 }
 
 void	key_right(t_hooks *class)
@@ -50,4 +56,6 @@ void	key_right(t_hooks *class)
 		fill_mandelbrot(class);
 	else if (class->wich_fractal == 2)
 		fill_julia(class);
+	else if (class->wich_fractal == 4)
+		fill_hourglass(class);
 }

@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:52:14 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/06 19:28:41 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:28:03 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	n_key_press(t_hooks *class)
 			fill_mandelbrot(class);
 		else if (class->wich_fractal == 2)
 			fill_julia(class);
+		else if (class->wich_fractal == 4)
+			fill_hourglass(class);
 	}
 	else
 	{
@@ -95,5 +97,7 @@ void	n_key_press(t_hooks *class)
 			fill_mandelbrot(class);
 		else if (class->wich_fractal == 2)
 			fill_julia(class);
+		else if (class->wich_fractal == 4)
+			fill_hourglass(class);
 	}
 }
