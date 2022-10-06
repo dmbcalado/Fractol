@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 03:40:21 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/05 19:26:11 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:43:55 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	colour_pixel(int flag, t_hooks *class)
 	if (flag == -1)
 		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y, 32896);
 	else if (flag == 0)
-		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y,  16777215);
+		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y, 16777215);
 	else
 		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y, colour);
 }
@@ -48,7 +48,7 @@ void	night_pallete(int flag, t_hooks *class)
 	if (flag > class->max_it / 3)
 		colour = 32640 + 300 * flag;
 	if (flag == -2)
-		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y,  0x00FFFFFF);
+		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y, 0x00FFFFFF);
 	else if (flag == -1)
 		my_mlx_pixel_put(&class->img, class->nbr.x, class->nbr.y, 0);
 	else if (flag == 0)
@@ -59,7 +59,7 @@ void	night_pallete(int flag, t_hooks *class)
 
 void	palletes(int flag, t_hooks *class)
 {
-	if(class->keys.key_n == 0)
+	if (class->keys.key_n == 0)
 		day_pallete(flag, class);
 	else
 		night_pallete(flag, class);

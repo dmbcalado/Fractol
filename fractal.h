@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:51:52 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/05 18:31:58 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:28:41 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,21 @@ typedef struct s_key
 
 typedef struct s_kint
 {
-	int		K_W;
-	int		K_A;
-	int		K_S;
-	int		K_D;
-	int		K_ESC;
-	int		K_AR_L;
-	int		K_AR_U;
-	int		K_AR_R;
-	int		K_AR_D;
-	int		K_NP_MIN;
-	int		K_NP_PLU;
-	int		M_SCR_U;
-	int		M_SCR_D;
-	int		M_CLICK;
-	int		M_RCLICK;
-	int		K_N;
+	int		k_w;
+	int		k_a;
+	int		k_s;
+	int		k_d;
+	int		k_esc;
+	int		k_ar_l;
+	int		k_ar_u;
+	int		k_ar_r;
+	int		k_ar_d;
+	int		k_np_min;
+	int		k_np_plu;
+	int		m_scr_u;
+	int		m_scr_d;
+	int		m_click;
+	int		k_n;
 }			t_kint;
 
 //-------- MOTHER STRUCT-------
@@ -130,20 +129,10 @@ t_zoom		starting_zoom(void);
 t_complex	starting_numbers(void);
 t_w_data	starting_window(int lenght, int height);
 t_mlx_data	starting_image(t_w_data win);
-t_complex	starting_point(void);
-int			close(int keycode, t_mlx_data *img);
 void		starting_class(t_hooks *class);
-void		fill_image(t_hooks *class);
-void		starting_new_class(t_hooks *class, t_hooks *new_class);
 t_mlx_data	starting_image(t_w_data win);
-void		fill_new_image(t_hooks *class, t_complex *point);
 void		refreshing_image(t_hooks *class);
 
-//------------- SAFETIES
-void		safety_one(void);
-void		safety_two(void);
-void		manual(void);
-void		free_rest(t_hooks *class);
 
 //------------- AUX FUNCTIONS
 int			compare(const char *s1, const char *s2);
@@ -170,6 +159,7 @@ void		key_up(t_hooks *class);
 void		key_down(t_hooks *class);
 void		key_left(t_hooks *class);
 void		key_right(t_hooks *class);
+void		n_key_press(t_hooks *class);
 
 //------ MOUSE
 void		new_mouse_posit(t_hooks *class, int x, int y);
@@ -184,7 +174,6 @@ void		zoom_mandelbrot(t_hooks *class);
 void		unzoom_mandelbrot(t_hooks *class);
 void		zoom_julia(t_hooks *class);
 void		unzoom_julia(t_hooks *class);
-void		set_pixel(t_hooks *class);
 
 //----------- RESOLUTION FUNCTIONS
 void		increase_resolution(t_hooks *class);
@@ -199,9 +188,6 @@ void		set_coordinates_julia(int x, int y, t_hooks *class);
 void		fill_mandelbrot(t_hooks *class);
 int			recursive_mandelbrot(double real, double imag, t_hooks *class);
 double		calculate_radius(double x, double y);
-void		sqrcomplex(t_complex *nbr);
-
-void		draw_circle(t_hooks *class);
 
 //----------- MANDELBROT
 int			recursive_julia(double real, double imag, t_hooks *class);
@@ -209,5 +195,8 @@ void		fill_julia(t_hooks *class);
 #endif
 
 
-
-// MOUSE
+//------------- SAFETIES & FREES
+void		safety_one(void);
+void		safety_two(void);
+void		manual(void);
+void		free_rest(t_hooks *class);

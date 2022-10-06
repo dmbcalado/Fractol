@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:46:54 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/03 21:35:18 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:45:40 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ double	calculate_radius(double real, double imag)
 
 void	calc_mouse_posit(t_hooks *class, int x, int y)
 {
-	class->nbr.real_mouse = ((double)x - (double)class->win.lenght / 2.0 - 175.0 + \
-	class->nbr.offset_x) / (350.0 + (double)class->zoom.h_zoom);
+	class->nbr.real_mouse = ((double)x - (double)class->win.lenght / 2.0 \
+	- 175.0 + class->nbr.offset_x) / (350.0 + (double)class->zoom.h_zoom);
 	class->nbr.img_mouse = ((double)class->win.height / 2.0 - (double)y + \
 	class->nbr.offset_y) / (350.0 + (double)class->zoom.v_zoom);
 	printf("x: %f	y: %f\n", class->nbr.real_mouse, class->nbr.img_mouse);

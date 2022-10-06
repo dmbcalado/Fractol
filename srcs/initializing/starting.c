@@ -6,7 +6,7 @@
 /*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 02:20:43 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/05 20:16:56 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:56:45 by dmendonc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,28 +71,5 @@ t_zoom	starting_zoom(void)
 
 	new.h_zoom = 1;
 	new.v_zoom = 1;
-	return (new);
-}
-
-t_kint	starting_kint(void)
-{
-	t_kint new;
-
-	new.K_A = 97;
-	new.K_W = 119;
-	new.K_S = 115;
-	new.K_D = 100;
-	new.K_ESC = 65307;
-	new.K_AR_L = 65361;
-	new.K_AR_U = 65362;
-	new.K_AR_R = 65363;
-	new.K_AR_D = 65364;
-	new.K_NP_MIN = 65453;
-	new.K_NP_PLU = 65451;
-	new.M_SCR_U = 4;
-	new.M_SCR_D = 5;
-	new.M_CLICK = 1;
-	new.M_RCLICK = 3;
-	new.K_N = 110;
 	return (new);
 }

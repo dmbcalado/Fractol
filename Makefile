@@ -6,7 +6,7 @@
 #    By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 20:41:42 by dmendonc          #+#    #+#              #
-#    Updated: 2022/10/05 20:07:55 by dmendonc         ###   ########.fr        #
+#    Updated: 2022/10/06 18:33:41 by dmendonc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -I /usr/local/include
 RM = rm -f
 SOURCES = $(wildcard srcs/*/*.c) $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.o)
-LDLIBS = -g -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm #-fsanitize=address
+LDLIBS = -g -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -fsanitize=address
 BLUE = \033[34m
 YELL = \033[33m
 WHITE = \033[0m
